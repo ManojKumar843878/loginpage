@@ -1,0 +1,25 @@
+ var inputusrname=document.getElementById("input-user");
+var inputpswors=document.getElementById("input-psword");
+var form=document.getElementById("formcont")
+var username="admin" ;
+var password="password123";
+
+function login(event){
+    event.preventDefault();
+    var usernameval=inputusrname.value ;
+    var passwordval=inputpswors.value ;
+
+    if(usernameval===username && passwordval===password){
+        console.log("succ");
+        window.location.href="welcome.html";
+    }
+    else{
+        var para=document.createElement("p");
+        para.textContent="invalid username or password";
+        para.style.color="white";
+        form.appendChild(para);
+    }
+}
+function logout(){
+    window.location.href="login.html";
+}
